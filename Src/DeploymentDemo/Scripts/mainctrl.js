@@ -13,7 +13,7 @@ var DeploymentDemo;
             configurable: true
         });
         return MainCtrl;
-    })();
+    }());
     DeploymentDemo.MainCtrl = MainCtrl;
 })(DeploymentDemo || (DeploymentDemo = {}));
 //# sourceMappingURL=mainctrl.js.map
