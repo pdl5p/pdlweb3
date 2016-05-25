@@ -1,0 +1,24 @@
+{
+  "name": "deploymentdemo",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Chris Klug <chris@59north.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.4.7",
+    "less": "~2.5.3",
+    "bootstrap": "~3.3.5"
+  }
+}

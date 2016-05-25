@@ -1,0 +1,60 @@
+﻿@using System.Configuration
+<!DOCTYPE html>
+
+<html data-ng-app="DeploymentDemo">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        <link href="~/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+        <link rel="stylesheet/less" type="text/css" href="~/Styles/Site.less" />
+    }
+    else
+    {
+        <link href="@ConfigurationManager.AppSettings["cdn.prefix"]/dist/deploymentdemo.min.css" rel="stylesheet" />
+    }
+</head>
+<body data-ng-controller="mainCtrl as ctrl">
+
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">Deployment Demo</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h1>{{ctrl.greeting}}</h1>
+            <p>This is a demo of how we can use continous delivery with Azure while using a front-end build pipeline.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <hr>
+
+        <footer>
+            <p>&copy; Company 2014</p>
+        </footer>
+    </div>
+
+    
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        <script src="~/bower_components/angular/angular.js"></script>
+        <script src="~/bower_components/less/dist/less.min.js"></script>
+        <script src="~/Scripts/MainCtrl.js"></script>
+        <script src="~/Scripts/App.js"></script>
+    }
+    else
+    {
+        <script src="@ConfigurationManager.AppSettings["cdn.prefix"]/dist/deploymentdemo.min.js"></script>
+    }
+</body>
+</html>
